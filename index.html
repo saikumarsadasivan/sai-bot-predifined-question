@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+
+    <!-- ChatBot -->
+    <link rel="stylesheet" type="text/css" href="css/jquery.saibotform.css">
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.saibotform.js"></script>
+
+
+</head>
+<body>
+<!-- ChatBot -->
+<div class="chat_icon">
+    <i class="fa fa-comments" aria-hidden="true"></i>
+</div>
+
+<div class="chat_box">
+    <div class="my-sai-form-wrapper">
+        <form action="/sai" method="GET" class="hidden">
+
+            <select data-sai-question="Hello! Its from saikumarsadasivan1@gmail.com ">
+                <option value="hi">HI</option>
+                <option value="hello">Hellow</option>
+            </select>
+            <input type="text" name="name" data-sai-question="Please, Enter your name">
+
+            <input type="text" data-sai-question="Hi {name}, <br> It's a pleasure to meet you." data-no-answer="true">
+
+            <input data-sai-question="Enter your e-mail"
+                   data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+                   type="email" name="email" required placeholder="What's your e-mail?">
+            <input data-sai-question="Enter your number" data-pattern="^((\\+91-?)|0)?[0-9]{10}$" type="number"
+                   name="number" required placeholder="What's your number?">
+            <input type="text" name="purpose" data-sai-question="Please, Enter whats your purpose?">
+
+            <select data-sai-question="Please Conform">
+                <option value="Yes">Conform</option>
+            </select>
+
+        </form>
+    </div>
+</div>
+<!-- ChatBot end -->
+
+
+<script>
+    $(document).ready(function () {
+        $('.chat_icon').click(function () {
+            $('.chat_box').toggleClass('active');
+        });
+
+        $('.my-sai-form-wrapper').convform({selectInputStyle: 'disable'})
+    });
+
+</script>
+
+</body>
+</html>
